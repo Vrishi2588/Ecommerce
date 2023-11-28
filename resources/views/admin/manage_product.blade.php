@@ -41,7 +41,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="image" class="control-label mb-1">Image</label>
-                                        <input id="image" " name=" image" type="file" class="form-control" aria-required="true" aria-invalid="false" {{ $image_required }}>
+
+                                        <input id="image" name=" image" type="file" class="form-control" aria-required="true" aria-invalid="false" {{ $image_required }}>
                                         @error('image')
                                         <div class="alert alert-danger" role="alert">
                                             {{ $message }}
@@ -127,17 +128,28 @@
                                             <label for="price" class="control-label mb-1">Price</label>
                                             <input id="price" name="price" type="text" class="form-control" aria-required="true" aria-invalid="false" required>
                                         </div>
+
+                                        <div class="col-md-2">
+                                            <label for="size_id" class="control-label mb-1">Size</label>
+                                            <select id="size_id" name="size_id" type="text" class="form-control" aria-required="true" aria-invalid="false" required>
+                                                <option value="">Select Size</option>
+                                                {{-- @foreach($sizes->pluck('size','id') as $id => $size)
+                                                <option value="{{$id}}">{{$size}}</option>
+                                                @endforeach --}}
+                                            </select>
+                                        </div>
+
                                         <div class="col-md-2">
                                             <label for="color_id" class="control-label mb-1">Color</label>
                                             <select id="color_id" name="color_id" class="form-control" aria-required="true" aria-invalid="false" required>
                                                 <option value="">Select Size</option>
-                                                @foreach($colors as $list)
-                                                <option value="{{ $list->id }}">
-                                                    {{ $list ->color}}</option>
-                                                @endforeach
+                                                {{-- @foreach($colors as $list)
+                                                 <option value="{{$list->id}}">
+                                                {{ $list ->color}}</option>
+                                                @endforeach --}}
                                             </select>
 
-                                            </div>
+                                        </div>
 
 
 
